@@ -1,0 +1,21 @@
+{
+    "name": "jsonselect",
+    "version": "0.0.1",
+    "description": "CSS-like selectors for JSON",
+    "url": "https://github.com/ryanramage/kanso-jsonselect",
+    "categories": ["utils"],
+    "modules": ["jsonselect-helpers.js", "views"],
+    "dependencies": {
+            "modules": null
+    },
+    "maintainers": [
+        {
+            "name" : "Lloyd Hilaiel",
+            "url"  : "https://github.com/lloyd"
+        },
+        {
+            "name": "Ryan Ramage",
+            "url": "http://github.com/ryanramage"
+        }
+    ]
+}

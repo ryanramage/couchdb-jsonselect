@@ -1,0 +1,12 @@
+{
+    "name": "jsonselect-example",
+    "version": "0.0.1",
+    "description": "CSS-like selectors for JSON",
+    "load" : "lib/app",
+    "modules": ["lib"],
+    "dependencies": {
+        "modules" : null,
+        "properties" : null,
+        "jsonselect" : null
+    }
+}

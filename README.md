@@ -37,8 +37,8 @@ Retrieve Only Part Of A Doc
 
 One nice thing you can do, is retreive just part of a doc using the show function provided.
 
-Assume you have a document named ```mydoc``` , and jsonselect has been added to the design doc ```_design/app```.
-To get all the ```.languagesSpoken``` properties on that doc, use the following url
+Assume you have a document named mydoc , and jsonselect has been added to the design doc _design/app.
+To get all the .languagesSpoken properties on that doc, use the following url
 
     http://localhost:5984/db/_design/app/_show/json_select/mydoc?select=.languagesSpoken
 
@@ -50,8 +50,8 @@ Retrieve Only Part Of A Doc In A View
 
 One nice thing you can do, is retreive just part of a doc retrieved in a view using the list function provided.
 
-Assume you have a view named ```myview``` and jsonselect has been added to the design doc ```_design/app```.
-To get all the ```.languagesSpoken``` on that view, use the following url
+Assume you have a view named myview and jsonselect has been added to the design doc _design/app
+To get all the .languagesSpoken on that view, use the following url
 
     http://localhost:5984/db/_design/app/_list/json_select/myview?include_docs=true&select=.languagesSpoken
 

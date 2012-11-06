@@ -2,7 +2,7 @@
     "name": "jsonselect",
     "version": "0.0.2",
     "description": "CSS-like selectors for JSON",
-    "url": "https://github.com/ryanramage/kanso-jsonselect",
+    "url": "https://github.com/ryanramage/couchdb-jsonselect",
     "categories": ["utils"],
     "modules": ["views", "shows", "lists"],
     "dependencies": {

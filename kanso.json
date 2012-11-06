@@ -1,10 +1,10 @@
 {
     "name": "jsonselect",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "CSS-like selectors for JSON",
     "url": "https://github.com/ryanramage/kanso-jsonselect",
     "categories": ["utils"],
-    "modules": ["jsonselect-helpers.js", "views"],
+    "modules": ["views", "shows", "lists"],
     "dependencies": {
             "modules": null
     },

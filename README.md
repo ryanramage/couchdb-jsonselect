@@ -1,4 +1,4 @@
-JSONSelect For Kanso
+JSONSelect For CouchDB
 =====================
 
 CSS-like selectors for JSON, which can be used in couch views, and provided show and list functions.
@@ -7,14 +7,6 @@ CSS-like selectors for JSON, which can be used in couch views, and provided show
  - It feels like CSS.
 
 http://jsonselect.org/
-
-
-Add To Kanso
-------------
-
-    "dependencies": {
-        "jsonselect" : null
-    }
 
 
 Use in a view
@@ -63,6 +55,21 @@ Return an array of all docs that contain the model field, with the value of that
        ]
 
 The include_docs is used for the view to return the doc to the list. The full doc is not actually returned, only the portion selected.
+
+
+
+
+Add To Kanso
+------------
+
+    "dependencies": {
+        "jsonselect" : null
+    }
+
+Other CouchApp tools
+--------------------
+
+Copy the .js files into the right places and push to your couch.
 
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+var path = require('path')
 var exec = require('child_process').exec
 var url = require('url')
 
@@ -9,7 +9,10 @@ if (!db_url) return usage()
 
 // push the couchapp we need to couchdb
 
-var cmd = './node_modules/.bin/couchapp push app.js ' + db_url
+var couchapp_path = path.resolve(__dirname, './node_modules/.bin/couchapp')
+var app_path = path.resolve(__dirname, './app.js')
+
+var cmd = couchapp_path + ' push ' + app_path + ' ' + db_url
 exec(cmd, function(err, stdout){
 	if (err) return console.log(err)
   console.log(stdout.toString());

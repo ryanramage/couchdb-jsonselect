@@ -1,5 +1,8 @@
 var fs = require('fs')
-var jsonselect = fs.readFileSync('./node_modules/JSONSelect/src/jsonselect.js').toString()
+var path = require('path')
+
+var jsonselect_path = path.resolve(__dirname, './node_modules/JSONSelect/src/jsonselect.js')
+var jsonselect = fs.readFileSync(jsonselect_path).toString()
 
 var ddoc = {
   _id: '_design/jsonselect',

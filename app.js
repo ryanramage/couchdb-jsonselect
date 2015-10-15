@@ -1,7 +1,47 @@
-function(head, req) {
+var fs = require('fs')
+var jsonselect = fs.readFileSync('./views/lib/jsonselect.js').toString()
+
+
+var ddoc = {
+  _id: '_design/jsonselect',
+  views: {},
+  lists: {},
+  shows: {}
+}
+
+
+ddoc.views.lib = {
+  jsonselect: jsonselect
+}
+
+ddoc.shows.select = function(doc, req) {
+  var error = {
+  	code : 400
+  }
+
+  if (!doc) return {
+    code : 404,
+    body: "Please provide a doc to the show function"
+  }
+  if (!req.query.select) return {
+    code : 500,
+    body: "a querystring select was not provided"
+  }
+  var jsonselect = require('views/lib/jsonselect');
+  var result =  jsonselect.match(req.query.select, doc);
+
+  return {
+    code: 200,
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(result)
+  };
+}
+
+
+ddoc.lists.select = function(head, req) {
 
     var realJson = true;
-    if (req.query.streamJson) {
+    if (req.query.ldjson) {
         realJson = false;
     }
     var include_docs = false;
@@ -38,11 +78,12 @@ function(head, req) {
     function wrapSend(row, sent_count, realJson) {
         var pre = '';
         if (sent_count > 0 && realJson) pre = ',';
-        send(pre + JSON.stringify(row) + '\n');
+        send(pre + JSON.stringify(row) + '\r\n');
         return true;
     }
 
-    start({'headers' : {'Content-Type' : 'application/json'}});
+    if (realJson) start({'headers' : {'Content-Type' : 'application/json'}});
+    else start({'headers' : {'Content-Type' : 'application/json; boundary=NL'}});
     if (realJson) send('[\n');
     var count = 0;
     var row;
@@ -55,3 +96,4 @@ function(head, req) {
 
 }
 
+module.exports = ddoc

@@ -1,0 +1,29 @@
+{
+  "name": "couchdb-jsonselect",
+  "version": "1.0.0",
+  "description": "css selectors for couchdb views",
+  "bin": {
+    "couchdb-jsonselect": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanramage/couchdb-jsonselect.git"
+  },
+  "keywords": [
+    "couchdb",
+    "jsonselect",
+    "query"
+  ],
+  "author": "Ryan Ramage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanramage/couchdb-jsonselect/issues"
+  },
+  "homepage": "https://github.com/ryanramage/couchdb-jsonselect#readme",
+  "dependencies": {
+    "couchapp": "^0.11.0"
+  }
+}

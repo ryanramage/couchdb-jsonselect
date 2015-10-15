@@ -1,6 +1,5 @@
 var fs = require('fs')
-var jsonselect = fs.readFileSync('./views/lib/jsonselect.js').toString()
-
+var jsonselect = fs.readFileSync('./node_modules/JSONSelect/src/jsonselect.js').toString()
 
 var ddoc = {
   _id: '_design/jsonselect',
@@ -8,7 +7,6 @@ var ddoc = {
   lists: {},
   shows: {}
 }
-
 
 ddoc.views.lib = {
   jsonselect: jsonselect

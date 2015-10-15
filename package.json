@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/ryanramage/couchdb-jsonselect#readme",
   "dependencies": {
+    "JSONSelect": "^0.4.0",
     "couchapp": "^0.11.0"
   }
 }
